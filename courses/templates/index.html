@@ -3,6 +3,25 @@
 {% load static %}
 
 {% block content %}
-<h1>Cursos</h1>
+
+<section>
+  <div>
+    <h2>
+      Posts Recentes
+    </h2>
+  </div>
+  <div class="grid-posts">
+    {% for post in posts %}
+      <div class="section-post">
+        <img src="{{ post.image.url }}" alt="">
+          <div class="infos-post">
+            <p id="author">{{ post.author }}</p>
+            <h3 id="name-post">{{ post.title }}</h3>
+            <p id="about-post">{{ post.content}}</p>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
 
 {% endblock %}

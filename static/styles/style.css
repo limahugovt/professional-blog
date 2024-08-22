@@ -8,7 +8,6 @@ body {
 header {
   width: 100%;
   height: 60px;
-  margin: 10px 10px;
 
   display: flex;
   justify-content: space-between;
@@ -33,4 +32,51 @@ nav ul {
     color: #1A1A1A;
     font-size: 20px;
   }
+}
+
+
+
+.section-post {
+  display: flex;
+  gap: 20px;
+  width: 592px;
+}
+
+.section-post img {
+  max-width: 320px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.infos-post {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  #author {
+    margin: 0px;
+    color: #6941C6;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  #name-post {
+    margin: 0px;
+    margin: 0px;
+  }
+
+  #about-post {
+    margin: 0px;
+    max-width: 248px;
+    color: #667085;
+    max-height: 200px;
+  }
+}
+
+.grid-posts {
+  display: grid;
+  grid-template-columns: repeat(2, 592px);
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
 }
