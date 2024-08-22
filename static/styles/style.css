@@ -70,6 +70,11 @@ nav ul {
     max-width: 248px;
     color: #667085;
     max-height: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
   }
 }
 
@@ -78,5 +83,11 @@ nav ul {
   grid-template-columns: repeat(2, 592px);
   gap: 20px;
   width: 100%;
-  justify-content: center;
+}
+
+.grid-posts-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
 }
