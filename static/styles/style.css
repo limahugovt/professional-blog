@@ -20,6 +20,12 @@ header h1 {
   font-size: 20px;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
 
 nav ul {
   display: flex;
@@ -51,12 +57,26 @@ nav ul {
 .section-post {
   display: flex;
   gap: 20px;
-  width: max-content;
+  max-width: 592px;
+}
+
+.section-post-colum {
+  display: flex;
+  flex-direction: column;
+  max-width: 383px;
+  gap: 32px;
+}
+
+.section-post-colum img {
+  width: 384px;
+  height: 228px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .section-post img {
-  width: 320px;
-  height: 200px;
+  width: 384px;
+  height: 240px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -70,7 +90,10 @@ nav ul {
 
 #name-post {
   margin: 0px;
-  margin: 0px;
+  max-width: 248px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #about-post {
@@ -91,6 +114,7 @@ nav ul {
   gap: 32px;
 }
 
+
 .infos-post {
   display: flex;
   flex-direction: column;
@@ -108,12 +132,9 @@ nav ul {
   margin: 0px;
   max-width: 592px;
   color: #667085;
-  max-height: 48px;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 .grid-posts {
@@ -124,7 +145,6 @@ nav ul {
 
 .grid-posts-3 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
