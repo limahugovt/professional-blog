@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title%}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1>Blog Victor</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
