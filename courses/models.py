@@ -22,6 +22,7 @@ class Post(models.Model):
   status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
   image = models.ImageField(upload_to='posts/', blank=False)
+  relevant = models.BooleanField(default=False)
 
   class Meta:
     ordering = ('-publish',)

@@ -10,17 +10,32 @@
       Posts Recentes
     </h2>
   </div>
-  <div class="grid-posts">
-    {% for post in posts %}
-      <div class="section-post">
-        <img src="{{ post.image.url }}" alt="">
+  <div class="container">
+    <div class="post-relevant">
+      {% for posts_relevant in posts_relevant %}
+          <div class="image-default">
+            <img src="{{ posts_relevant.image.url }}" alt="" class="post-image">
+          </div>
+          <div class="infos-post-relevant">
+            <p id="author">{{ posts_relevant.author }}</p>
+            <h3 id="name-post">{{ posts_relevant.title }}</h3>
+            <p id="about-post-relevant">{{ posts_relevant.content }}</p>
+          </div>
+      {% endfor %}
+    </div>
+
+    <div class="grid-posts">
+      {% for post in posts %}
+        <div class="section-post">
+          <img src="{{ post.image.url }}" alt="" class="post-image">
           <div class="infos-post">
             <p id="author">{{ post.author }}</p>
             <h3 id="name-post">{{ post.title }}</h3>
-            <p id="about-post">{{ post.content}}</p>
+            <p id="about-post">{{ post.content }}</p>
           </div>
-      </div>
-    {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 <section>
@@ -32,7 +47,7 @@
   <div class="grid-posts-3">
     {% for post in posts %}
       <div class="section-post">
-        <img src="{{ post.image.url }}" alt="">
+        <img src="{{ post.image.url }}" alt="" class="post-image">
           <div class="infos-post">
             <p id="author">{{ post.author }}</p>
             <h3 id="name-post">{{ post.title }}</h3>
