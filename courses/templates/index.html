@@ -29,7 +29,7 @@
     <div class="card mb-3">
       <img src="{{ posts_relevant.image.url }}" class="card-img-top" style="max-height: 500px; object-fit: cover;">
       <div class="card-body">
-        <h5 class="card-title">{{ posts_relevant.title }}</h5>
+        <a class="card-title" href="{% url 'detail' posts_relevant.id %}">{{ posts_relevant.title }}</a>
         <p class="card-text">{{ posts_relevant.content }}</p>
         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
@@ -45,7 +45,7 @@
         <img src="{{ posts_recents.image.url }}" class="card-img-top"
           style="object-fit: cover; width: 250px; height: 180px;">
         <div class="card-body">
-          <h5 class="card-title">{{ posts_recents.title }}</h5>
+          <a class="card-title" href="{% url 'detail' posts_recents.id %}">{{ posts_recents.title }}</a>
           <p class="card-text">{{ posts_recents.content }}</p>
           <p class="card-text"><small class="text-body-secondary">{{ posts_recents.author }}</small></p>
         </div>
