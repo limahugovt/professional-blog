@@ -1,61 +1,59 @@
-{% extends 'base.html' %} 
-{% block title %}Cursos{% endblock %} 
+{% extends 'base.html' %}
+{% block title %}Cursos{% endblock %}
 {% load static %}
 
 {% block content %}
 
-<section class="section">
-  <div>
-    <h2>
-      Posts Recentes
-    </h2>
-  </div>
-  <div class="container">
-    <div class="post-relevant">
-      {% for posts_relevant in posts_relevant %}
-          <div class="image-default">
-            <img src="{{ posts_relevant.image.url }}" alt="" class="post-image">
-          </div>
-          <div class="infos-post-relevant">
-            <p id="author">{{ posts_relevant.author }}</p>
-            <h3 id="name-post">{{ posts_relevant.title }}</h3>
-            <p id="about-post-relevant">{{ posts_relevant.content }}</p>
-          </div>
-      {% endfor %}
-    </div>
+<main style="padding: 20px 200px;">
 
-    <div class="grid-posts">
-      {% for posts_recents in posts_recents %}
-        <div class="section-post">
-          <img src="{{ posts_recents.image.url }}" alt="" class="post-image">
-          <div class="infos-post">
-            <p id="author">{{ posts_recents.author }}</p>
-            <h3 id="name-post">{{ posts_recents.title }}</h3>
-            <p id="about-post">{{ posts_recents.content }}</p>
-          </div>
+  <h1>Categorias</h1>
+  <section style="display: flex; width: 100%; justify-content: center; gap: 60px;">
+    {% for categories in categories %}
+      <div class="row">
+        <div class="col-lg-4"
+          style="width: 420px; display: flex; flex-direction: column; align-items: center; text-align: center; word-break: break-all;">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder"
+            src="{{ categories.image.url }}" />
+          <h2 class="fw-normal">{{ categories.name }}</h2>
+          <p style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;
+          overflow: hidden;">{{ categories.description }}</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais »</a></p>
         </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div>
-    <h2>
-      Todos os Posts
-    </h2>
-  </div>
-  <div class="grid-posts-3">
-    {% for all_posts in all_posts %}
-      <div class="section-post-colum">
-        <img src="{{ all_posts.image.url }}" alt="" class="post-image">
-          <div class="infos-post">
-            <p id="author">{{ all_posts.author }}</p>
-            <h3 id="name-post">{{ all_posts.title }}</h3>
-            <p id="about-post">{{ all_posts.content}}</p>
-          </div>
       </div>
     {% endfor %}
-  </div>
-</section>
+  </section>
+
+  <h1>Post em Destaque</h1>
+  <section>
+    {% for posts_relevant in posts_relevant %}
+    <div class="card mb-3">
+      <img src="{{ posts_relevant.image.url }}" class="card-img-top" style="max-height: 500px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{ posts_relevant.title }}</h5>
+        <p class="card-text">{{ posts_relevant.content }}</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <h1>Post Recentes</h1>
+  <section>
+    <div class="card-group" style="display: flex; ">
+      {% for posts_recents in posts_recents %}
+      <div class="card" style="max-width: 250px;">
+        <img src="{{ posts_recents.image.url }}" class="card-img-top"
+          style="object-fit: cover; width: 250px; height: 180px;">
+        <div class="card-body">
+          <h5 class="card-title">{{ posts_recents.title }}</h5>
+          <p class="card-text">{{ posts_recents.content }}</p>
+          <p class="card-text"><small class="text-body-secondary">{{ posts_recents.author }}</small></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
 
 {% endblock %}
