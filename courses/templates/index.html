@@ -17,7 +17,7 @@
           <h2 class="fw-normal">{{ categories.name }}</h2>
           <p style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;
           overflow: hidden;">{{ categories.description }}</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'detail_category' categories.id %}">Ver Mais »</a></p>
         </div>
       </div>
     {% endfor %}

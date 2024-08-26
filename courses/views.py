@@ -13,3 +13,8 @@ def detail_view(request, id):
     post = get_object_or_404(Post, id=id)
     context = {'post': post}
     return render(request, 'pagePost.html', context)
+
+def detail_view_category(request, id):
+    catgory = get_object_or_404(Category, id=id)
+    context = {'category': catgory}
+    return render(request, 'pageCategory.html', context)
