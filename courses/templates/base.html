@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" style="padding: 10px 100px;">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">Blog Profissional</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,14 @@
         </div>
       </div>
     </nav>
+  </header>
+  <div class="nav-scroller py-1 mb-3 border-bottom" style="padding: 0px 200px;">
+    <nav class="nav nav-underline justify-content-between">
+      <a class="nav-item nav-link link-body-emphasis" href="#">Sobre</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Experiência</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Formação acadêmica</a>
+    </nav>
+  </div>
   {% block content %}
   {% endblock %}
 </body>
